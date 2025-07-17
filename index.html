@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Workout Logger</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Load Chart.js globally -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="page active" id="welcome-page">
+    <h1>🏋️ Workout Logger</h1>
+    <p>Track workouts, reps, sets & progress visually.</p>
+    <button id="get-started-btn">Get Started</button>
+  </div>
+
+  <div class="page" id="setup-page">
+    <h2>Setup Your Weekly Plan</h2>
+    <label for="daysPerWeek">Days per week:</label>
+    <select id="daysPerWeek">
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+    <button id="next-to-naming">Next</button>
+  </div>
+
+  <div class="page" id="day-naming-page">
+    <h2>Name Each Workout Day</h2>
+    <form id="day-names-form"></form>
+    <button id="to-exercise-btn">Continue</button>
+  </div>
+
+  <div class="page" id="exercise-setup-page">
+    <h2>Add Exercises</h2>
+    <div id="exercise-forms-container"></div>
+    <button id="finish-setup-btn">Finish Workout Setup</button>
+  </div>
+
+  <div class="page" id="dashboard-page">
+    <h2>Your Workout Dashboard</h2>
+    <div id="dashboard-content"></div>
+
+    <!-- Session Logger -->
+    <div id="session-logger">
+      <h3>Log Workout Session</h3>
+      <input type="date" id="session-date" />
+      <button id="save-session-btn">Save Session</button>
+    </div>
+    <div id="previous-workouts">
+      <h3>Previous Workouts</h3>
+      <div id="workouts-list"></div>
+      <canvas id="workout-chart" width="400" height="200"></canvas>
+    </div>
+
+    <!-- Bodyweight Logger -->
+    <div id="bodyweight-logger">
+      <h3>Bodyweight Logger</h3>
+      <input type="date" id="weight-date" />
+      <input type="number" id="weight-input" placeholder="Weight (kg)" />
+      <button id="save-weight-btn">Save Weight</button>
+    </div>
+    <div id="weight-list">
+      <h3>Previous Weights</h3>
+      <div id="weights-list"></div>
+      <canvas id="weight-chart" width="400" height="200"></canvas>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
