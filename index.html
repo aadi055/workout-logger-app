@@ -5,16 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Workout Logger</title>
   <link rel="stylesheet" href="style.css" />
-  <!-- Load Chart.js globally -->
+  <!-- Chart.js for graphs -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <div class="page active" id="welcome-page">
+  <!-- 1. AUTHENTICATION PAGE -->
+  <div class="page active" id="auth-page">
+    <h2>Welcome to Workout Logger</h2>
+    <button id="google-btn">Continue with Google</button>
+    <button id="apple-btn">Continue with Apple</button>
+    <button id="guest-btn">Continue as Guest</button>
+  </div>
+
+  <!-- 2. WELCOME SCREEN -->
+  <div class="page" id="welcome-page">
     <h1>🏋️ Workout Logger</h1>
     <p>Track workouts, reps, sets & progress visually.</p>
     <button id="get-started-btn">Get Started</button>
+    <button id="sign-out-btn">Sign Out</button>
   </div>
 
+  <!-- 3. SETUP SCREEN -->
   <div class="page" id="setup-page">
     <h2>Setup Your Weekly Plan</h2>
     <label for="daysPerWeek">Days per week:</label>
@@ -28,18 +39,21 @@
     <button id="next-to-naming">Next</button>
   </div>
 
+  <!-- 4. DAY NAMING SCREEN -->
   <div class="page" id="day-naming-page">
     <h2>Name Each Workout Day</h2>
     <form id="day-names-form"></form>
     <button id="to-exercise-btn">Continue</button>
   </div>
 
+  <!-- 5. EXERCISE SETUP SCREEN -->
   <div class="page" id="exercise-setup-page">
     <h2>Add Exercises</h2>
     <div id="exercise-forms-container"></div>
     <button id="finish-setup-btn">Finish Workout Setup</button>
   </div>
 
+  <!-- 6. DASHBOARD SCREEN -->
   <div class="page" id="dashboard-page">
     <h2>Your Workout Dashboard</h2>
     <div id="dashboard-content"></div>
